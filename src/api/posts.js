@@ -44,7 +44,7 @@ export const updatePost = (id, user) => {
     method: 'PATCH',
     url: `${apiUrl}/posts/${id}/`,
     headers: {
-      'Authorization': `Bearer ${user.token}`
+      'Authorization': `Token ${user.token}`
     },
     data: {
       post: {
