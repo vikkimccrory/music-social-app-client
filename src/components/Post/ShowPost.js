@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { getPost } from '../../api/posts'
+import Button from 'react-bootstrap/Button'
+import { getPost, deletePost } from '../../api/posts'
 import { withRouter } from 'react-router'
 
 class ShowPost extends Component {
@@ -8,7 +9,8 @@ class ShowPost extends Component {
     super(props)
 
     this.state = {
-      post: {}
+      post: {},
+      deleted: false
     }
   }
 
@@ -16,6 +18,13 @@ class ShowPost extends Component {
     const { match } = this.props
     getPost(match.params.id, this.props.user)
       .then(res => this.setState({ post: res.data.post }))
+      .catch(console.error)
+  }
+
+  destroy = () => {
+    const { match } = this.props
+    deletePost(match.params.id, this.props.user)
+      .then(() => this.setState({ delete: true }))
       .catch(console.error)
   }
 
@@ -30,6 +39,7 @@ class ShowPost extends Component {
             <h4>{post.title}</h4>
             <p>{post.content}</p>
             <p>{post.tags}</p>
+            <Button onClick={this.destroy}>Delete Post</Button>
             <Link to='/posts'>Back to all posts</Link>
           </div>
         </Fragment>

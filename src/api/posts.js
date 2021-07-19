@@ -56,3 +56,13 @@ export const updatePost = (id, user) => {
     }
   })
 }
+
+export const deletePost = (id, user) => {
+  return axios({
+    method: 'DELETE',
+    url: `${apiUrl}/posts/${id}/`,
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}
