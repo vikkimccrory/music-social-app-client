@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
-// import { Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 import { getAllPosts } from '../../api/posts'
 
 class IndexPosts extends Component {
@@ -24,7 +24,7 @@ class IndexPosts extends Component {
         <h3>{post.title}</h3>
         <p>{post.content}</p>
         <p>{post.tags}</p>
-        <button>Show Post</button>
+        <Button variant="primary"><Link className="button-link" to={`/posts/${post.id}`}>Show Post</Link></Button>
       </div>
       // <Link to={`/posts/${post.id}`}>{post.title}</Link>
 
