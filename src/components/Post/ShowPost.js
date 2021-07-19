@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { getPost, deletePost } from '../../api/posts'
 import { withRouter } from 'react-router'
+import messages from '../AutoDismissAlert/messages'
 
 class ShowPost extends Component {
   constructor (props) {
@@ -22,10 +23,19 @@ class ShowPost extends Component {
   }
 
   destroy = () => {
-    const { match } = this.props
+    const { match, msgAlert } = this.props
     deletePost(match.params.id, this.props.user)
       .then(() => this.setState({ delete: true }))
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Post Deleted',
+        message: messages.deleteSuccess,
+        variant: 'success'
+      }))
+      .catch(() => msgAlert({
+        heading: 'Post Delete Failure',
+        message: messages.deleleFailure,
+        variant: 'danger'
+      }))
   }
 
   render () {
@@ -39,6 +49,7 @@ class ShowPost extends Component {
             <h4>{post.title}</h4>
             <p>{post.content}</p>
             <p>{post.tags}</p>
+            <Link className="button-link" to={`/posts/${this.props.match.params.id}/edit`}><Button>Edit Post</Button></Link>
             <Button onClick={this.destroy}>Delete Post</Button>
             <Link to='/posts'>Back to all posts</Link>
           </div>
