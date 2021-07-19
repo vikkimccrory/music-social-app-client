@@ -12,28 +12,21 @@ class ShowPost extends Component {
     }
   }
 
-  componentDidMount (id) {
+  componentDidMount () {
     const { match } = this.props
-    console.log(this.props)
-    console.log(match)
     getPost(match.params.id, this.props.user)
-      .then(res => {
-        console.log(res)
-        return res
-      })
       .then(res => this.setState({ post: res.data.post }))
       .catch(console.error)
   }
 
   render () {
-    const post = this.state
+    const { post } = this.state
     if (!post) {
       return <p>Loading...</p>
     } else {
       return (
         <Fragment>
           <div key={post.id} className="post-container">
-            {console.log(post)}
             <h4>{post.title}</h4>
             <p>{post.content}</p>
             <p>{post.tags}</p>
