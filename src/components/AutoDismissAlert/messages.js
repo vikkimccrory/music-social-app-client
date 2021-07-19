@@ -9,5 +9,9 @@ export default {
   createPostSuccess: 'Post created successfully!',
   createPostFailure: 'Failed to create post',
   deleteSuccess: 'Post successfully deleted',
-  deleteFailure: 'Post failed to delete'
+  deleteFailure: 'Post failed to delete',
+  updateSuccess: 'Post successfully updated',
+  updateFailure: 'Post failed to update',
+  indexSuccess: 'Here are all of your posts',
+  indexFailure: 'Failed to get all of your posts'
 }

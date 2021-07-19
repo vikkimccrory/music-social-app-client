@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { getAllPosts } from '../../api/posts'
+import messages from '../AutoDismissAlert/messages'
 
 class IndexPosts extends Component {
   constructor (props) {
@@ -15,6 +16,16 @@ class IndexPosts extends Component {
   componentDidMount () {
     getAllPosts(this.props.user)
       .then(res => this.setState({ posts: res.data.posts }))
+      .then(() => this.props.msgAlert({
+        heading: 'Index Success',
+        message: messages.indexSuccess,
+        variant: 'success'
+      }))
+      .catch(() => this.props.msgAlert({
+        heading: 'Index failure',
+        message: messages.indexFailure,
+        variant: 'danger'
+      }))
       .catch(console.error)
   }
 
