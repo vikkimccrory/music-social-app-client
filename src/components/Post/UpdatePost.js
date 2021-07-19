@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import { updatePost } from '../../api/posts'
 import PostForm from '../shared/PostForm'
 
@@ -19,7 +19,7 @@ class UpdatePost extends Component {
 
   componentDidMount () {
     const { match } = this.props
-    updatePost(match.params.id, this.props.user)
+    updatePost(match.params.id, this.props.user, this.state.post)
       .then(res => this.setState({ post: res.data.post }))
       .catch(console.error)
   }
@@ -34,7 +34,7 @@ class UpdatePost extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const { match } = this.props
-    updatePost(match.params.id, this.props.user)
+    updatePost(match.params.id, this.props.user, this.state.post)
       .then(() => this.setState({ updated: true }))
       .catch(console.error)
   }
@@ -59,4 +59,4 @@ class UpdatePost extends Component {
   }
 }
 
-export default UpdatePost
+export default withRouter(UpdatePost)

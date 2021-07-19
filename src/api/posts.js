@@ -39,7 +39,7 @@ export const getAllPosts = (user) => {
   })
 }
 
-export const updatePost = (id, user) => {
+export const updatePost = (id, user, post) => {
   return axios({
     method: 'PATCH',
     url: `${apiUrl}/posts/${id}/`,
@@ -49,9 +49,9 @@ export const updatePost = (id, user) => {
     data: {
       post: {
         owner: '',
-        title: user.post.title,
-        content: user.post.content,
-        tags: user.post.tags
+        title: post.title,
+        content: post.content,
+        tags: post.tags
       }
     }
   })
