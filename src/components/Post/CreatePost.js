@@ -54,6 +54,7 @@ render () {
   }
   return (
     <Fragment>
+      <h1>Create A Post</h1>
       <PostForm
         post={post}
         handleSubmit={handleSubmit}

@@ -50,13 +50,13 @@ class ShowPost extends Component {
     return (
       <Fragment>
         <div key={post.id} className="post-container">
-          <h4>{post.title}</h4>
+          <h3>{post.title}</h3>
           <p>{post.content}</p>
           <p>{post.tags}</p>
-          <Link className="button-link" to={`/posts/${this.props.match.params.id}/edit`}><Button>Edit Post</Button></Link>
-          <Button onClick={this.destroy}>Delete Post</Button>
-          <Link to='/posts'>Back to all posts</Link>
+          <Link className="button-link" to={`/posts/${this.props.match.params.id}/edit`}><Button className="edit-button">Edit Post</Button></Link>
+          <Button className="delete-button" onClick={this.destroy}>Delete Post</Button>
         </div>
+        <Link className="back-to-index-link" to='/posts'>Back to all posts</Link>
       </Fragment>
     )
   }

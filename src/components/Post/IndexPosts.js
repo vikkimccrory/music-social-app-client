@@ -35,7 +35,7 @@ class IndexPosts extends Component {
         <h3>{post.title}</h3>
         <p>{post.content}</p>
         <p>{post.tags}</p>
-        <Button variant="primary"><Link className="button-link" to={`/posts/${post.id}`}>Show Post</Link></Button>
+        <Link className="button-link" to={`/posts/${post.id}`}><Button className="index-button" variant="primary">Show Post</Button></Link>
       </div>
       // <Link to={`/posts/${post.id}`}>{post.title}</Link>
 
@@ -43,7 +43,7 @@ class IndexPosts extends Component {
 
     return (
       <Fragment>
-        <h4>Posts</h4>
+        <h1 className="index-heading">All Posts</h1>
         <ul>
           {posts}
         </ul>
