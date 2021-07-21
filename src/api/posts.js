@@ -10,12 +10,6 @@ export const createPost = (user, data) => {
     },
     data: {
       post: data
-      // post: {
-      //   owner: '',
-      //   title: post.title,
-      //   content: post.content,
-      //   tags: post.tags
-      // }
     }
   })
 }
