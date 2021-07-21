@@ -49,7 +49,7 @@ class ShowPost extends Component {
     }
     return (
       <Fragment>
-        <div key={post.id} className="post-container">
+        <div key={post.id} className="show-post-container">
           <h3>{post.title}</h3>
           <p>{post.content}</p>
           <p>{post.tags}</p>

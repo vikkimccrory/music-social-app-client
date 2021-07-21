@@ -4,6 +4,7 @@ $secondary: #000;
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
 .button-link {
   color: white;
@@ -11,24 +12,52 @@ $secondary: #000;
 }
 
 .brand-name {
-  font-family: 'Caveat', cursive;
+  font-family: 'Oswald', sans-serif;
   font-size: 40px;
   padding: 0px;
 }
 
+.home-page {
+  margin-top: 35vh;
+  margin-bottom: 65vh;
+}
 
 
 h1 {
-  font-family: 'Caveat', cursive;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  margin: 10px 10px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
   text-align: center;
   margin: 10px 10px;
 }
 
+.after-sign-in-home-page {
+  margin-top: 35vh;
+  margin-bottom: 65vh;
+}
+
 .post-container {
   text-align: center;
-  margin: 20px 10px;
+  margin: 20px 0px;
+  padding: 20px;
   border: 2px solid $primary;
   word-wrap: break-word;
+  background-color: #000;
+}
+
+.show-post-container {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  padding: 30px;
+  border: 2px solid $primary;
+  word-wrap: break-word;
+  background-color: #000;
 }
 
 p {
@@ -44,22 +73,23 @@ p {
 body {
   background-color: #060608;
   background-size: cover;
+  background-position: center;
   color: $primary;
   background-image: url("https://i.ibb.co/qkBx87L/sYPGJS.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
 
 
 .form-label {
   font-size: 30px;
   font-weight: bold;
   margin-top: 10px;
-  font-family: 'Caveat', cursive;
+  font-family: 'Oswald', cursive;
 }
 
 h3 {
-  font-family: 'Caveat', cursive;
+  font-family: 'Oswald', cursive;
   text-align: center;
 }
 input {
@@ -83,24 +113,29 @@ Button {
 .cancel-button {
   margin-right: 15px;
   float: right;
+  font-family: 'Oswald', sans-serif;
 }
 
 .submit-button {
   float: right;
+  font-family: 'Oswald', sans-serif;
 }
 
 .index-button {
   width: 50%;
   margin-bottom: 20px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .delete-button {
   width: 75%;
   margin-bottom: 25px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .edit-button {
   width: 75%;
+  font-family: 'Oswald', sans-serif;
 }
 
 .back-to-index-link {
@@ -108,4 +143,5 @@ Button {
   margin-right: 13px;
   font-weight: bold;
   text-decoration: none;
+  font-family: 'Oswald', sans-serif;
 }

@@ -3,11 +3,14 @@ import React, { Fragment } from 'react'
 const HomePage = (props) => {
   let homeJsx = ''
   if (props.user) {
-    homeJsx = <h1>Welcome back!</h1>
+    homeJsx = <div className="after-sign-in-home-page">
+      <h1>Welcome Back!</h1>
+      <h2>Happy Creating :)</h2>
+    </div>
   } else {
     homeJsx = <div className="home-page">
-      <h1>All of your song ideas, all in one place</h1>
-      <h3>A safe place for your lyrics, progressions, and voice memos</h3>
+      <h2>Your: Lyrics, Melodies, Chord Progressions</h2>
+      <h1>All In One Place</h1>
     </div>
   }
   return (

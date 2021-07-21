@@ -37,7 +37,6 @@ class IndexPosts extends Component {
         <p>{post.tags}</p>
         <Link className="button-link" to={`/posts/${post.id}`}><Button className="index-button" variant="primary">Show Post</Button></Link>
       </div>
-      // <Link to={`/posts/${post.id}`}>{post.title}</Link>
 
     ))
 
